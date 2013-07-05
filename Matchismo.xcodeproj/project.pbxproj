@@ -95,8 +95,8 @@
 		9632A0EE17840B150091B79C /* Matchismo */ = {
 			isa = PBXGroup;
 			children = (
-				9632A10017840B150091B79C /* MainStoryboard.storyboard */,
 				9632A111178448340091B79C /* Model */,
+				9632A10017840B150091B79C /* MainStoryboard.storyboard */,
 				9632A10317840B150091B79C /* CardGameViewController.h */,
 				9632A10417840B150091B79C /* CardGameViewController.m */,
 				9632A0EF17840B150091B79C /* Supporting Files */,

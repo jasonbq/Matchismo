@@ -7,11 +7,15 @@
 //
 
 #import "CardGameViewController.h"
+#import "Deck.h"
+#import "PlayingCardDeck.h"
 
 @interface CardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
+@property (strong, nonatomic) Deck *deck;
 @end
 
 @implementation CardGameViewController
@@ -19,33 +23,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSMutableArray *array = [NSMutableArray arrayWithCapacity:10];
-    NSLog(@"size of the array is: %d", array.count);
-    [array insertObject:@"str1" atIndex:0];
-    NSLog(@"size of the array is: %d", array.count);
-    [array insertObject:@"str2" atIndex:0];
-    [array insertObject:@"str3" atIndex:0];
-    [array insertObject:@"str4" atIndex:0];
-    NSLog(@"size of the array is: %d", array.count);
-    for (NSString *str in array){
-        NSLog(@"%@n",str);
+    NSLog(@"viewDidLoad");
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
+}
+
+- (Deck *)deck
+{
+    if (!_deck) {
+        _deck = [[PlayingCardDeck alloc] init];
     }
-    
-    //add object
-    [array addObject:@"str5"];
-    [array addObject:@"str6"];
-    [array addObject:@"str7"];
-    [array addObject:@"str8"];
-    NSLog(@"size of the array is: %d", array.count);
-    for (NSString *str in array){
-        NSLog(@"%@n",str);
+    return _deck;
+}
+
+- (void)setCardButtons:(NSArray *)cardButtons
+{
+    _cardButtons = cardButtons;
+    for (UIButton *cardButton  in self.cardButtons) {
+        Card *card = [self.deck drawRandomCard];
+        [cardButton setTitle:card.contents forState:UIControlStateSelected];
     }
-   
-    
-
-
-
-
+    NSLog(@"Setter for the IBOutlet");
 }
 
 - (void)setFlipCount:(int)flipCount
