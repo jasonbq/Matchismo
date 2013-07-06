@@ -32,7 +32,7 @@
     NSArray *rankStrings = [PlayingCard rankStrings];
     return [rankStrings[self.rank] stringByAppendingString:self.suit];
 }
-
+    
 - (NSString *)suit
 {
     return _suit ? _suit : @"?";
