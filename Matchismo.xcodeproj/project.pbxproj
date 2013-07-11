@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		960214441784A6B900236C62 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 960214431784A6B900236C62 /* PlayingCard.m */; };
 		960214471784BFC400236C62 /* PlayingCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 960214461784BFC400236C62 /* PlayingCardDeck.m */; };
+		96207655178F2D7C00B78370 /* CardResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96207654178F2D7C00B78370 /* CardResultViewController.m */; };
+		96207658178F423D00B78370 /* GameResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 96207657178F423D00B78370 /* GameResult.m */; };
 		9632A0E917840B150091B79C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9632A0E817840B150091B79C /* UIKit.framework */; };
 		9632A0EB17840B150091B79C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9632A0EA17840B150091B79C /* Foundation.framework */; };
 		9632A0ED17840B150091B79C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9632A0EC17840B150091B79C /* CoreGraphics.framework */; };
@@ -30,6 +32,10 @@
 		960214431784A6B900236C62 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		960214451784BFC400236C62 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
 		960214461784BFC400236C62 /* PlayingCardDeck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardDeck.m; path = Model/PlayingCardDeck.m; sourceTree = "<group>"; };
+		96207653178F2D7C00B78370 /* CardResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardResultViewController.h; sourceTree = "<group>"; };
+		96207654178F2D7C00B78370 /* CardResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardResultViewController.m; sourceTree = "<group>"; };
+		96207656178F423D00B78370 /* GameResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameResult.h; sourceTree = "<group>"; };
+		96207657178F423D00B78370 /* GameResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameResult.m; sourceTree = "<group>"; };
 		9632A0E517840B150091B79C /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9632A0E817840B150091B79C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9632A0EA17840B150091B79C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -102,6 +108,10 @@
 				9632A10017840B150091B79C /* MainStoryboard.storyboard */,
 				9632A10317840B150091B79C /* CardGameViewController.h */,
 				9632A10417840B150091B79C /* CardGameViewController.m */,
+				96207653178F2D7C00B78370 /* CardResultViewController.h */,
+				96207654178F2D7C00B78370 /* CardResultViewController.m */,
+				96207656178F423D00B78370 /* GameResult.h */,
+				96207657178F423D00B78370 /* GameResult.m */,
 				9632A0EF17840B150091B79C /* Supporting Files */,
 			);
 			path = Matchismo;
@@ -215,6 +225,8 @@
 				960214441784A6B900236C62 /* PlayingCard.m in Sources */,
 				960214471784BFC400236C62 /* PlayingCardDeck.m in Sources */,
 				963608111787538200F89F8B /* CardMatchingGame.m in Sources */,
+				96207655178F2D7C00B78370 /* CardResultViewController.m in Sources */,
+				96207658178F423D00B78370 /* GameResult.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
