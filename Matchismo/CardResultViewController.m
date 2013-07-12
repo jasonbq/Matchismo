@@ -18,8 +18,12 @@
 - (void)updateUI
 {
     NSString *displayText = @"";
+    // format date
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
     for (GameResult *result in [GameResult allGameResults]) {
-        displayText = [displayText stringByAppendingFormat:@"Score: %d(%@, %g)\n",result.score, result.end, round(result.duration)];
+        displayText = [displayText stringByAppendingFormat:@"Score: %d(%@, %g)\n",result.score, [formatter stringFromDate:result.end], round(result.duration)];
     }
     self.display.text = displayText;
 }

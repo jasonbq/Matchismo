@@ -62,7 +62,7 @@
 // the reason put the return type here is beacause we may change the repersentation in the future
 // we can use interspection to check the object type
 
-
+// the return type is a dictionary
 - (id)asPropertyList
 {
     return @{START_KEY: self.start, END_KEY: self.end, SCORE_KEY: @(self.score)};
