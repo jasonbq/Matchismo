@@ -39,7 +39,7 @@
             _start = resultDictionary[START_KEY];
             _end = resultDictionary[END_KEY];
             _score = [resultDictionary[SCORE_KEY] intValue];
-            if (!_start || _end) {
+            if (!_start || !_end) {
                 self = nil;
             }
         }
