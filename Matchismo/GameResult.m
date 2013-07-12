@@ -69,6 +69,28 @@
 }
 
 
+#pragma mark - Game result comparision
+- (NSComparisonResult)compareScoreToGameResult:(GameResult *)otherResult
+{
+    if (self.score < otherResult.score) return NSOrderedDescending;
+    else if (self.score > otherResult.score) return NSOrderedAscending;
+    else return NSOrderedSame;
+}
+
+- (NSComparisonResult)compareEndDateToGameResult:(GameResult *)otherResult
+{
+    return [otherResult.end compare:self.end];
+}
+
+- (NSComparisonResult)compareDurationToGameResult:(GameResult *)otherResult
+{
+    if (self.duration < otherResult.duration) return NSOrderedDescending;
+    else if (self.duration > otherResult.duration) return NSOrderedAscending;
+    else return NSOrderedSame;
+}
+
+
+#pragma mark - Life cycle
 - (id)init
 {
     self = [super init];
@@ -91,4 +113,5 @@
     _end = [NSDate date];
     [self synchronize];
 }
+
 @end

@@ -11,9 +11,29 @@
 @interface CardResultViewController()
 
 @property (weak, nonatomic) IBOutlet UITextView *display;
+@property (nonatomic) SEL sortSelector;
 @end
 
 @implementation CardResultViewController
+@synthesize sortSelector = _sortSelector;
+
+
+// setter and getter of sortSelector
+- (SEL)sortSelector
+{
+    if (!_sortSelector) {
+        _sortSelector = @selector(compareScoreToGameResult:);
+    }
+    return _sortSelector;
+}
+
+- (void)setSortSelector:(SEL)sortSelector
+{
+    _sortSelector = sortSelector;
+    [self updateUI];
+}
+
+
 
 - (void)updateUI
 {
@@ -22,7 +42,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterShortStyle];
-    for (GameResult *result in [GameResult allGameResults]) {
+    for (GameResult *result in [[GameResult allGameResults] sortedArrayUsingSelector:self.sortSelector]) {
         displayText = [displayText stringByAppendingFormat:@"Score: %d(%@, %g)\n",result.score, [formatter stringFromDate:result.end], round(result.duration)];
     }
     self.display.text = displayText;
@@ -51,6 +71,25 @@
     [self setup];
     return self;
 }
+
+
+#pragma mark - sorting the game result
+- (IBAction)sortByDate
+{
+    self.sortSelector = @selector(compareEndDateToGameResult:);
+}
+
+- (IBAction)sortByScore
+{
+    self.sortSelector = @selector(compareScoreToGameResult:);
+}
+
+- (IBAction)sortByDuration
+{
+    self.sortSelector = @selector(compareDurationToGameResult:);
+    
+}
+
 
 
 

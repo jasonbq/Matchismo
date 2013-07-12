@@ -8,7 +8,7 @@
         <scene sceneID="B29-aE-yD9">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="qHw-0x-3V6" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="jNt-TN-C8H">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-791" y="-582"/>
         </scene>
-        <!--Card Result View Controller - Item-->
+        <!--Card Result View Controller - Result-->
         <scene sceneID="xsW-6H-iWg">
             <objects>
                 <viewController id="k70-jz-eTK" customClass="CardResultViewController" sceneMemberID="viewController">
@@ -50,6 +50,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortByDate" destination="k70-jz-eTK" eventType="touchUpInside" id="Zib-Zx-S93"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uAB-33-dfc">
                                 <rect key="frame" x="102" y="348" width="90" height="44"/>
@@ -62,6 +65,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortByScore" destination="k70-jz-eTK" eventType="touchUpInside" id="PZk-ww-Zpg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jA9-nH-pHl">
                                 <rect key="frame" x="210" y="348" width="90" height="44"/>
@@ -74,11 +80,14 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortByDuration" destination="k70-jz-eTK" eventType="touchUpInside" id="YWu-Kl-D8t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="7zc-Rn-m0y"/>
+                    <tabBarItem key="tabBarItem" title="Result" id="7zc-Rn-m0y"/>
                     <connections>
                         <outlet property="display" destination="ssF-n5-6tA" id="HyM-t2-jsj"/>
                     </connections>
@@ -87,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="-291" y="-716"/>
         </scene>
-        <!--Card Game View Controller - Item-->
+        <!--Card Game View Controller - Game-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="CardGameViewController" sceneMemberID="viewController">
@@ -319,7 +328,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="CR8-mT-Q8A"/>
+                    <tabBarItem key="tabBarItem" title="Game" id="CR8-mT-Q8A"/>
                     <connections>
                         <outlet property="flipsLabel" destination="u9I-Lh-Jl5" id="rpA-w3-MgQ"/>
                         <outlet property="scoreLabel" destination="rjk-Y8-IxD" id="seR-MM-k6X"/>
@@ -346,7 +355,6 @@
         <class className="CardGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
-                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
